@@ -18,7 +18,7 @@ pipeline {
 
         stage('Deploy Application') {
             steps {
-                bat 'wsl ansible-playbook /home/soham/ansible-project/deploy.yml'
+                bat 'wsl ansible-playbook /home/devops/ansible-project/deploy.yml'
             }
         }
     }
