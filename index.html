@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJ Square | College Event Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <main id="login-view" class="login-shell">
+    <section class="login-hero">
+      <nav class="welcome-nav" aria-label="Welcome navigation">
+        <div class="brand-row">
+          <img class="brand-logo" src="assets/logo.png" alt="AJ Square College Event Management System logo">
+          <span>AJ Square</span>
+        </div>
+        <div class="welcome-links">
+          <a href="#login-title">Login</a>
+          <a href="#login-title">Roles</a>
+          <a href="#login-title">Events</a>
+          <a href="#login-title" class="call-link">Get Started</a>
+        </div>
+      </nav>
+      <div class="hero-copy">
+        <span class="eyebrow">Campus events made simple</span>
+        <h1>Organize college events with approvals, registrations, and reports in one place.</h1>
+        <p>AJ Square gives students, faculty, organizers, and admins a real event workspace for cultural programs, workshops, seminars, competitions, and campus festivals.</p>
+        <div class="hero-actions">
+          <a href="#login-title" class="primary-link">Open Dashboard</a>
+          <span>Trusted by student councils, faculty teams, and campus admins</span>
+        </div>
+        <div class="hero-badges" aria-label="Platform highlights">
+          <span>Role dashboards</span>
+          <span>Approval workflow</span>
+          <span>Live attendance</span>
+        </div>
+      </div>
+      <div class="welcome-preview" aria-label="College event dashboard preview">
+        <img class="welcome-photo" src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80" alt="College students attending a campus event">
+        <div class="preview-card preview-main">
+          <div class="preview-card-header">
+            <span>Today</span>
+            <strong>Event Operations</strong>
+          </div>
+          <div class="preview-bars">
+            <span style="--bar: 82%"></span>
+            <span style="--bar: 64%"></span>
+            <span style="--bar: 48%"></span>
+          </div>
+        </div>
+        <div class="preview-card preview-float">
+          <strong>24</strong>
+          <span>Pending approvals</span>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="System preview statistics">
+        <article>
+          <strong id="login-stat-events">0</strong>
+          <span>Events</span>
+        </article>
+        <article>
+          <strong id="login-stat-users">0</strong>
+          <span>Users</span>
+        </article>
+        <article>
+          <strong id="login-stat-registrations">0</strong>
+          <span>Registrations</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="login-panel" aria-labelledby="login-title">
+      <div>
+        <span class="eyebrow">Welcome back</span>
+        <h2 id="login-title">Sign in to your workspace</h2>
+        <p>Select a role to preview the dashboard exactly as that campus user would see it.</p>
+      </div>
+
+      <div class="login-highlights" aria-label="Login highlights">
+        <article>
+          <strong>Live</strong>
+          <span>Registrations and attendance update instantly.</span>
+        </article>
+        <article>
+          <strong>Secure</strong>
+          <span>Every role sees only the right tools and actions.</span>
+        </article>
+      </div>
+
+      <form id="login-form" class="form-stack">
+        <label>
+          Full name
+          <input id="login-name" type="text" placeholder="e.g. Aishwarya Jadhav" required minlength="2">
+        </label>
+
+        <label>
+          Role
+          <select id="login-role" required>
+            <option value="">Select role</option>
+            <option value="admin">Admin</option>
+            <option value="organizer">Event Organizer</option>
+            <option value="student">Student</option>
+            <option value="faculty">Faculty/Staff</option>
+          </select>
+        </label>
+
+        <button class="primary-btn" type="submit">Enter Dashboard</button>
+      </form>
+
+      <div class="demo-users">
+        <span>Sample users</span>
+        <button type="button" data-demo-name="Dr. Meera Rao" data-demo-role="admin">Admin</button>
+        <button type="button" data-demo-name="Arjun Mehta" data-demo-role="organizer">Organizer</button>
+        <button type="button" data-demo-name="Nisha Patel" data-demo-role="student">Student</button>
+        <button type="button" data-demo-name="Prof. Kabir Sen" data-demo-role="faculty">Faculty</button>
+      </div>
+    </section>
+  </main>
+
+  <main id="app-view" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand-row">
+        <img class="brand-logo" src="assets/logo.png" alt="AJ Square College Event Management System logo">
+        <span>AJ Square</span>
+      </div>
+      <div class="profile-card">
+        <div id="profile-avatar" class="avatar">U</div>
+        <div>
+          <strong id="profile-name">User</strong>
+          <span id="profile-role">Role</span>
+        </div>
+      </div>
+      <nav id="side-nav" class="side-nav" aria-label="Dashboard sections"></nav>
+      <button id="logout-btn" class="ghost-btn" type="button">Log out</button>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <button id="menu-toggle" class="icon-btn" type="button" aria-label="Toggle navigation">&#9776;</button>
+        <div>
+          <span id="section-kicker" class="eyebrow">Dashboard</span>
+          <h2 id="section-title">Overview</h2>
+        </div>
+        <div class="topbar-actions">
+          <button id="reset-data-btn" class="secondary-btn" type="button">Reset sample data</button>
+        </div>
+      </header>
+
+      <div id="dashboard-content" class="content-area"></div>
+    </section>
+  </main>
+
+  <script src="database.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
